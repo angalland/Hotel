@@ -55,8 +55,10 @@ class Client {
 
     // Lister les reservations du client
     public function afficherReservation(){
-        $result =  "Le client $this a réservé :</br>";
+        $result =  "<h2>Reservation de $this :</h2></br>";
+        $result .= count($this->_reservations)." réservations</br>";
         foreach ($this->_reservations as $reservation){
+            $result = "<strong>Hotel : ".$reservation->getChambre()->getNom();
             $result .= "La chambre ".$reservation->getChambre()." du ".$reservation."</br>"; 
         }
         return $result."</br>";
