@@ -52,6 +52,6 @@ class Reservation {
     }
 
     public function __toString() {
-        return $this->_dateArrive." au ".$this->_dateDepart."</br>";
+        return $this->_dateArrive." au ".$this->_dateDepart;
     }
 }

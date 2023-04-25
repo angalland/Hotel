@@ -68,7 +68,7 @@ class Chambre {
     // toString
 
     public function __toString(){
-        return $this->_nomChambre."</br>";
+        return $this->_nomChambre;
     }
 
     // Ajouter reservation

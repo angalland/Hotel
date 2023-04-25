@@ -45,7 +45,7 @@ class Client {
     // toString
 
     public function __toString() : string {
-        return $this->_prenom." ".$this->_nom."</br>";
+        return $this->_prenom." ".$this->_nom;
     }
 
     // Ajouter reservation
@@ -59,6 +59,6 @@ class Client {
         foreach ($this->_reservations as $reservation){
             $result .= "La chambre ".$reservation->getChambre()." du ".$reservation."</br>"; 
         }
-        return $result;
+        return $result."</br>";
     }
 }

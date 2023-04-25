@@ -56,7 +56,7 @@ class Hotel {
     // toString
 
     public function __toString(){
-        return $this->_nom."</br>";
+        return $this->_nom;
     }
 
     // Ajouter Chambre 
