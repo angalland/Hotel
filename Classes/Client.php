@@ -6,12 +6,14 @@ class Client {
     private string $_nom;
     private string $_prenom;
     private DateTime $_dateNaissance;
+    private array $_reservations;
 
     // Constructeur
     public function __construct(string $nom, string $prenom, string $dateNaissance){
         $this->_nom = $nom;
         $this->_prenom = $prenom;
         $this->_dateNaissance = new DateTime($dateNaissance);
+        $this->_reservations = [];
     }
 
     // Getter et setter
@@ -44,5 +46,10 @@ class Client {
 
     public function __toString() : string {
         return $this->_prenom." ".$this->_nom."</br>";
+    }
+
+    // Ajouter reservation
+    public function addReservation() {
+        $this->_reservations[] = $reservations;
     }
 }

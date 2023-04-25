@@ -5,9 +5,10 @@ class Chambre {
     // Argument
     private string $_nomChambre;
     private int $_nbLit;
-    private bool $_reservation;
+    private bool $_reservation; 
     private int $_prix;
     private bool $_wifi;
+    private array $_chambres;
 
     // Construct 
     public function __construct(string $nomChambre, int $nbLit, bool $reservation, int $prix, bool $wifi){
@@ -16,6 +17,7 @@ class Chambre {
         $this->_reservation = $reservation;
         $this->_prix = $prix;
         $this->_wifi = $wifi;
+        $this->_chambres = [];
     }
 
     // Getter et Setter
@@ -64,5 +66,10 @@ class Chambre {
 
     public function __toString(){
         return $this->_nomChambre."</br>";
+    }
+
+    // Ajouter reservation
+    public function addReservation() {
+    $this->_reservations[] = $reservations;
     }
 }
