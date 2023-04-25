@@ -20,7 +20,7 @@ class Chambre {
         $this->_wifi = $wifi;
         $this->_reservations = [];
         $this->_hotel = $hotel;
-        $this->hotel->addHotel($this);
+        $this->_hotel->addHotel($this);
     }
 
     // Getter et Setter

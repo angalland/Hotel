@@ -22,3 +22,5 @@ echo $hotel1;
 echo $client1;
 echo $chambre1;
 echo $reservation1;
+
+echo $client1->afficherReservation();

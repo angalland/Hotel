@@ -52,4 +52,13 @@ class Client {
     public function addReservation(Reservation $reservations) {
         $this->_reservations[] = $reservations;
     }
+
+    // Lister les reservations du client
+    public function afficherReservation(){
+        $result =  "Le client $this a réservé :</br>";
+        foreach ($this->_reservations as $reservation){
+            $result .= "La chambre ".$reservation->getChambre()." du ".$reservation."</br>"; 
+        }
+        return $result;
+    }
 }
