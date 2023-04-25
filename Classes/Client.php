@@ -49,7 +49,7 @@ class Client {
     }
 
     // Ajouter reservation
-    public function addReservation() {
+    public function addReservation(Reservation $reservations) {
         $this->_reservations[] = $reservations;
     }
 }

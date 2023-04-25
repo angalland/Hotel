@@ -7,6 +7,7 @@ class Hotel {
     private string $_adresse;
     private string $_codePostal;
     private string $_ville;
+    private array $_chambres;
 
 
     // Constructeur
@@ -15,6 +16,8 @@ class Hotel {
         $this->_adresse = $adresse;
         $this->_codePostal = $codePostal;
         $this->_ville = $ville;
+        $this->_chambres = [];
+
     }
 
     // Getter et Setter
@@ -55,6 +58,11 @@ class Hotel {
     public function __toString(){
         return $this->_nom."</br>";
     }
+
+    // Ajouter Chambre 
+    public function addHotel(Chambre $chambres){
+        $this->_chambres[] = $chambres;
+    }    
 
 }
 

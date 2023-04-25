@@ -5,8 +5,8 @@ class Reservation {
     // Argument
     private Client $_client;
     private Chambre $_chambre;
-    private DateTime $_dateArrive;
-    private DateTime $_dateDepart;
+    private string $_dateArrive;
+    private string $_dateDepart;
 
     // Construct
     public function __construct(Client $client, Chambre $chambre, string $dateArrive, string $dateDepart){
@@ -14,8 +14,8 @@ class Reservation {
         $this->_client->addReservation($this);
         $this->_chambre = $chambre;
         $this->_chambre->addReservation($this);
-        $this->dateArrive = new DateTime($dateArrive);
-        $this->dateDepart = new DateTime($dateDepart);
+        $this->_dateArrive = $dateArrive;
+        $this->_dateDepart = $dateDepart;
     }
 
     // Getter et Setter

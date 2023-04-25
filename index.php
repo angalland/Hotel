@@ -13,7 +13,7 @@ $hotel1 = new Hotel ("hilton", "10 route de la Gare", "67000", "STRASBOUG");
 $client1 = new Client ("Galland", "Anthony", "15-02-1991");
 
     // Chambre
-$chambre1 = new Chambre ("12", 3, true, 130, false);
+$chambre1 = new Chambre ("12", 3, true, 130, false, $hotel1);
 
     // Reservation
 $reservation1 = new Reservation ($client1, $chambre1, "01-01-2021", "01-01-2021");    
