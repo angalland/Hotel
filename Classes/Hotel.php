@@ -1,0 +1,67 @@
+<?php
+
+class Hotel {
+
+    // Argument
+    private string $_nom;
+    private string $_adresse;
+    private string $_codePostal;
+    private string $_ville;
+
+
+    // Constructeur
+    public function __construct(string $nom, string $adresse, string $codePostale, string $ville,){
+        $this->_nom = $nom;
+        $this->_adresse = $adresse;
+        $this->_codePostale = $codePostale;
+        $this->_ville = $ville;
+    }
+
+    // Getter et Setter
+    public function getNom(){
+        return $this->_nom;
+    }
+
+    public function setNom($nom){
+        return $this->_nom = $nom;
+    }
+
+    public function getAdresse(){
+        return $this->_adresse;
+    }
+
+    public function setAdresse($adresse){
+        return $this->_adresse = $adresse;
+    }
+
+    public function getCodePostale(){
+        return $this->_codePostale;
+    }
+
+    public function setCodePostale($codePostale){
+        return $this->_codePostale = $codePostale;
+    }
+
+    public function getVille(){
+        return $this->_ville;
+    }
+
+    public function setVille($ville){
+        return $this->_ville = $ville;
+    }
+
+    // toString
+
+    public function __toString(){
+        return $this->_nom;
+    }
+
+}
+
+
+
+
+
+
+
+
