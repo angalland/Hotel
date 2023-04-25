@@ -20,7 +20,15 @@ class Chambre {
 
     // Getter et Setter
 
-    public function getNbLit(){
+    public function getNomChambre(){
+        return $this->_nomChambre;
+    }
+
+    public function setNomChambre ($nomChambre){
+        return $this->_nomChambre = $nomChambre;
+    }
+
+    public function getNbLit() {
         return $this->_nbLit;
     }
 
