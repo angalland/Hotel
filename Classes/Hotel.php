@@ -53,7 +53,7 @@ class Hotel {
     // toString
 
     public function __toString(){
-        return $this->_nom;
+        return $this->_nom."</br>";
     }
 
 }
