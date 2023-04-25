@@ -10,10 +10,10 @@ class Hotel {
 
 
     // Constructeur
-    public function __construct(string $nom, string $adresse, string $codePostale, string $ville,){
+    public function __construct(string $nom, string $adresse, string $codePostal, string $ville,){
         $this->_nom = $nom;
         $this->_adresse = $adresse;
-        $this->_codePostale = $codePostale;
+        $this->_codePostal = $codePostal;
         $this->_ville = $ville;
     }
 
