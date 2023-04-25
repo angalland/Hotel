@@ -38,11 +38,11 @@ class Hotel {
     }
 
     public function getCodePostale(){
-        return $this->_codePostale;
+        return $this->_codePostal;
     }
 
-    public function setCodePostale($codePostale){
-        return $this->_codePostale = $codePostale;
+    public function setCodePostale($codePostal){
+        return $this->_codePostal = $codePostal;
     }
 
     public function getVille(){
@@ -62,7 +62,21 @@ class Hotel {
     // Ajouter Chambre 
     public function addHotel(Chambre $chambres){
         $this->_chambres[] = $chambres;
-    }    
+    }
+    
+    // Information Hotel
+    public function infoHotel(){
+        $result = "<strong>$this</strong></br>";
+        $result .= $this->getAdresse(). " ".$this->getCodePostale()." ".$this->getVille()."</br>";
+        $result .= "Nombre de chambres : ".count($this->_chambres)."</br>";
+        foreach ($this->_chambres as $chambre){
+        if ($chambre->getReserver()){
+            $result .= count($this->_chambres);
+        }};
+        return $result;
+     
+    }
+
 
 }
 
