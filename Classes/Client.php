@@ -58,8 +58,14 @@ class Client {
         $result =  "<h2>Reservation de $this :</h2></br>";
         $result .= count($this->_reservations)." réservations</br>";
         foreach ($this->_reservations as $reservation){
-            $result = "<strong>Hotel : ".$reservation->getChambre()->getNom();
-            $result .= "La chambre ".$reservation->getChambre()." du ".$reservation."</br>"; 
+            $result .= "<strong> hotel : ".$reservation->getChambre()->getHotel()."</strong> ";
+            $result .= "/ Chambre ".$reservation->getChambre()." (".$reservation->getChambre()->getNbLit()." lits - ".$reservation->getChambre()->getPrix()." € - "; 
+            if ($reservation->getChambre()->getWifi()){
+                $result .= "Wifi : oui";
+            } else {
+                $result .= "Wifi : non";
+            };
+            $result .=" ) du ".$reservation."</br>"; 
         }
         return $result."</br>";
     }

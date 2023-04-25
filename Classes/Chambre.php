@@ -65,6 +65,14 @@ class Chambre {
         return $this->_wifi = $wifi;
     }
 
+    public function getHotel(){
+        return $this->_hotel;
+    }
+
+    public function setHotel($hotel) {
+        return $this->_hotel = $hotel;
+    }
+
     // toString
 
     public function __toString(){
@@ -75,6 +83,12 @@ class Chambre {
     public function addReservation(Reservation $reservations) {
     $this->_reservations[] = $reservations;
     }
+
+    // afficher Hotel
+    public function afficherHotel($_hotel){
+        return $_hotel->getNom();
+    }
+
 
 
 }
