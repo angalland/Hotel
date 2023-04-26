@@ -5,22 +5,23 @@ class Chambre {
     // Argument
     private string $_nomChambre;
     private int $_nbLit;
-    private bool $_reserver; 
     private int $_prix;
     private bool $_wifi;
     private array $_reservations;
     private Hotel $_hotel;
+    private bool $_reserver; 
 
     // Construct 
-    public function __construct(string $nomChambre, int $nbLit, bool $reserver, int $prix, bool $wifi, Hotel $hotel){
+    public function __construct(string $nomChambre, int $nbLit, /*bool $reserver,*/ int $prix, bool $wifi, Hotel $hotel){
         $this->_nomChambre = $nomChambre;
         $this->_nbLit = $nbLit;
-        $this->_reserver = $reserver;
+        /*$this->_reserver = $reserver;*/
         $this->_prix = $prix;
         $this->_wifi = $wifi;
         $this->_reservations = [];
         $this->_hotel = $hotel;
         $this->_hotel->addHotel($this);
+        $this->_reserver = false;
     }
 
     // Getter et Setter
@@ -80,8 +81,14 @@ class Chambre {
     }
 
     // Ajouter reservation
-    public function addReservation(Reservation $reservations) {
-    $this->_reservations[] = $reservations;
+    public function addReservation(Reservation $reservation) {
+        if (!$this->getReserver()) {
+            $this->_reservations[] = $reservation;
+            return $this->setReserver(true);
+        }
+        else {
+            return false;
+        }
     }
 
     // afficher Hotel
@@ -89,6 +96,6 @@ class Chambre {
         return $_hotel->getNom();
     }
 
-
+  
 
 }
