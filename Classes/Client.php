@@ -75,8 +75,8 @@ class Client {
             
         return $result." Prix total : ".$total;
     }
-}
         
+}
             
             
             

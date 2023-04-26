@@ -36,7 +36,7 @@ echo $client1->afficherReservation()."</br>";
 
 echo $reservation1->dureeSejour();
 
- $hotel1->statusChambre();
+$hotel1->statusChambre();
 
 
 
