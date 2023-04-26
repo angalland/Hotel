@@ -88,7 +88,7 @@ class Hotel {
     public function reservationHotel(){
         ?> <strong>Réservation de l'hôtel <?= $this?> </strong></br>
         <?php
-        foreach ($this->_chambres as $chambre){ // calcule le nombre de chambre reserver
+        
             $reserver = 0; 
             foreach ($this->_chambres as $chambre){
                 if ($chambre->getReserver()){
@@ -99,10 +99,11 @@ class Hotel {
                     ?>
            Aucune réservation !</br></br>
            <?php
-        }
-        
-    }
+       
+       
+    } else {
     ?><?=$reserver?> RESERVATIONS </br><?php
+    }
         foreach ($this->_chambres as $chambre){  // On parcours le tableau chambre
         if ($reservations = $chambre->getReservation()){ // on va chercher le tableau reservation
         foreach ($reservations as $reservation){ // on parcours le tableau reservation
@@ -115,6 +116,25 @@ class Hotel {
         }
         } ?></br><?php }
     }
+
+    // Status chambre hotel
+    public function statusChambre(){
+        ?> <table>
+                <thead>
+                        <tr>
+                            <th style="padding-right:20px;padding-left:20px;">Chambre</th>
+                            <th style="padding-right:20px;padding-left:20px;">Prix</th>
+                            <th style="padding-right:20px;padding-left:20px;">WIFI<th>
+                            <th style="padding-right:20px;padding-left:20px;">ETAT<th>
+                        </tr>
+                </tead>
+                <tbody><?php
+                    foreach ($this->_chambres as $chambre){
+                    ?><tr>
+                        <td style="text-align:center;"><?php echo $chambre->getNomChambre() ?></td>
+                      </tr><?php
+                        
+    }}
 
     
 }

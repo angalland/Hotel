@@ -68,13 +68,15 @@ class Client {
             $result .=" ) du ".$reservation."</br>"; 
         }
             
-
+            $total = 0;
           foreach ($this->_reservations as $reservation){
-            $result1 = ($reservation->dureeSejour() * $reservation->getChambre()->getPrix())."</br>";
-            var_dump($result1);
-            
-            
+            $total += ($reservation->dureeSejour() * $reservation->getChambre()->getPrix());
         }
-        return $result." Prix total : ";
+            
+        return $result." Prix total : ".$total;
     }
 }
+        
+            
+            
+            
