@@ -18,6 +18,7 @@ $chambre1 = new Chambre ("12", 3, true, 130, false, $hotel1);
 $chambre2 = new Chambre ("02", 2, false, 120, true, $hotel1);
 $chambre3 = new Chambre ("05", 2, false, 90, true, $hotel1);
 $chambre4 = new Chambre ("01", 4, true, 130, false, $hotel1);
+$chambre5 = new Chambre ("03", 3, false, 100, true, $hotel1);
 
     // Chambre Regent
 $chambre3 = new Chambre ("Suite Royale", 4, true, 250, true, $hotel2);

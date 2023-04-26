@@ -69,12 +69,14 @@ class Hotel {
         $result = "<strong>$this</strong></br>";
         $result .= $this->getAdresse(). " ".$this->getCodePostale()." ".$this->getVille()."</br>";
         $result .= "Nombre de chambres : ".count($this->_chambres)."</br>";
+        $reserver = 0;
         foreach ($this->_chambres as $chambre){
-            if ($chambre->getReserver([2]) == true){
-                 $result2 = count($this->_chambres);
+            if ($chambre->getReserver()){
+                 $reserver++;
             }
         };
-        $result .= "Nombre de chambres réservées ".$result2."</br>";
+        $result .= "Nombre de chambres réservées : ".$reserver."</br>";
+        $result .= "Nombre de chambres restantes : ".count($this->_chambres) - $reserver;
         return $result;    
     }
 
