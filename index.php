@@ -34,6 +34,7 @@ echo $hotel1->reservationHotel();
 echo $hotel2->reservationHotel();
 echo $client1->afficherReservation()."</br>";
 
-
+echo $reservation1->dureeSejour();
+var_dump($reservation1->dureeSejour());
 
 
