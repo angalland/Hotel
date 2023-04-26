@@ -66,18 +66,22 @@ class Hotel {
     
     // Information Hotel
     public function infoHotel(){
-        $result = "<strong>$this</strong></br>";
-        $result .= $this->getAdresse(). " ".$this->getCodePostale()." ".$this->getVille()."</br>";
-        $result .= "Nombre de chambres : ".count($this->_chambres)."</br>";
+        ?>
+        <strong><?= $this ?></strong></br>
+        <?= $this->getAdresse() ?> <?= $this->getCodePostale()?> <?=$this->getVille() ?></br>
+        Nombre de chambres : <?=count($this->_chambres) ?>  </br>
+        
+        <?php
         $reserver = 0;
         foreach ($this->_chambres as $chambre){
             if ($chambre->getReserver()){
                  $reserver++;
             }
         };
-        $result .= "Nombre de chambres réservées : ".$reserver."</br>";
-        $result .= "Nombre de chambres restantes : ".count($this->_chambres) - $reserver;
-        return $result;    
+        ?>
+        Nombre de chambres réservées : <?=$reserver ?></br>
+        Nombre de chambres restantes : <?= count($this->_chambres) - $reserver ?>
+       <?php
     }
 
 
