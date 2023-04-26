@@ -68,19 +68,18 @@ class Hotel {
     public function infoHotel(){
         ?>
         <strong><?= $this ?></strong></br>
-        <?= $this->getAdresse() ?> <?= $this->getCodePostale()?> <?=$this->getVille() ?></br>
-        Nombre de chambres : <?=count($this->_chambres) ?>  </br>
-        
+        <?= $this->getAdresse() ?> <?= $this->getCodePostale()?> <?=$this->getVille() ?></br> <!-- On obtient l'adresse, le code postale et la ville de l'hotel -->
+        Nombre de chambres : <?=count($this->_chambres) ?>  </br> <!-- Compte le nombre entiers de chambres -->
         <?php
         $reserver = 0;
         foreach ($this->_chambres as $chambre){
-            if ($chambre->getReserver()){
+            if ($chambre->getReserver()){  // compte le nombre de chambre réservé
                  $reserver++;
             }
         };
         ?>
         Nombre de chambres réservées : <?=$reserver ?></br>
-        Nombre de chambres restantes : <?= count($this->_chambres) - $reserver ?> </br></br>
+        Nombre de chambres restantes : <?= count($this->_chambres) - $reserver ?> </br></br> <!-- calcule le nombre de chambre restantes -->
        <?php 
     }
 
@@ -90,33 +89,36 @@ class Hotel {
         ?> <strong>Réservation de l'hôtel <?= $this?> </strong></br>
         <?php
         foreach ($this->_chambres as $chambre){ // calcule le nombre de chambre reserver
-            $reserver = 0;
+            $reserver = 0; 
             foreach ($this->_chambres as $chambre){
                 if ($chambre->getReserver()){
-                     $reserver++;
-                } 
-            }}
-            ?><?=$reserver?> RESERVATIONS </br><?php
-            foreach ($this->_chambres as $chambre){  // On parcours le tableau chambre
-                $reservations = $chambre->getReservation(); // on va chercher le tableau reservation
-                foreach ($reservations as $reservation){ // on parcours le tableau reservation
+                    $reserver++;
+                    
+                }}
+                if ($reserver == 0){
                     ?>
-                    <?= $reservation->getClient()?> -  chambre  <!-- On obtient le nom du client -->
-                    <?= $reservation->getChambre()?> du -  <!-- on obtient le nom de la chambre-->
-                    <?= $reservation->getDateArrive()?> au  <!-- on obtient la date d'arrive -->
-                    <?= $reservation->getDateDepart()?></br>
+           Aucune réservation !</br></br>
+           <?php
+        }
+        
+    }
+    ?><?=$reserver?> RESERVATIONS </br><?php
+        foreach ($this->_chambres as $chambre){  // On parcours le tableau chambre
+        if ($reservations = $chambre->getReservation()){ // on va chercher le tableau reservation
+        foreach ($reservations as $reservation){ // on parcours le tableau reservation
+        ?>
+        <?= $reservation->getClient()?> -  chambre  <!-- On obtient le nom du client -->
+        <?= $reservation->getChambre()?> du -  <!-- on obtient le nom de la chambre-->
+        <?= $reservation->getDateArrive()?> au  <!-- on obtient la date d'arrive -->
+        <?= $reservation->getDateDepart()?> <!-- on obtient la date de départ -->
+        <?php 
+        }
+        } ?></br><?php }
+    }
 
-                    <?php
-                }
-               
-            }
-              
-            ?>
-            </br><?php
-          
     
-    } 
-            
-
-
 }
+        
+        
+      
+
