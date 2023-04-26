@@ -5,8 +5,8 @@ class Reservation {
     // Argument
     private Client $_client;
     private Chambre $_chambre;
-    private string $_dateArrive;
-    private string $_dateDepart;
+    private DateTime $_dateArrive;
+    private DateTime $_dateDepart;
 
     // Construct
     public function __construct(Client $client, Chambre $chambre, string $dateArrive, string $dateDepart){
@@ -14,8 +14,8 @@ class Reservation {
         $this->_client->addReservation($this);
         $this->_chambre = $chambre;
         $this->_chambre->addReservation($this);
-        $this->_dateArrive = $dateArrive;
-        $this->_dateDepart = $dateDepart;
+        $this->_dateArrive = new DateTime($dateArrive);
+        $this->_dateDepart = new DateTime($dateDepart);
     }
 
     // Getter et Setter
@@ -52,6 +52,13 @@ class Reservation {
     }
 
     public function __toString() {
-        return $this->_dateArrive." au ".$this->_dateDepart;
+        return $this->getDateArrive()->format('d-m-Y')." au ".$this->getDateDepart()->format('d-m-Y');
     }
+
+    // Calcule duree du séjour
+    public function dureeSejour(){
+        $diff = $this->getDateDepart()->diff($this->getDateArrive());
+        return $diff->d;
+    }
+
 }

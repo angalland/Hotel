@@ -109,8 +109,8 @@ class Hotel {
         ?>
         <?= $reservation->getClient()?> -  chambre  <!-- On obtient le nom du client -->
         <?= $reservation->getChambre()?> du -  <!-- on obtient le nom de la chambre-->
-        <?= $reservation->getDateArrive()?> au  <!-- on obtient la date d'arrive -->
-        <?= $reservation->getDateDepart()?> <!-- on obtient la date de départ -->
+        <?= $reservation->getDateArrive()->format('d-m-Y')?> au  <!-- on obtient la date d'arrive -->
+        <?= $reservation->getDateDepart()->format('d-m-Y')?> <!-- on obtient la date de départ -->
         <?php 
         }
         } ?></br><?php }
