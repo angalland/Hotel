@@ -104,6 +104,7 @@ class Chambre {
         return $_hotel->getNom();
     }
 
+
   
 
 }

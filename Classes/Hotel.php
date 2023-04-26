@@ -86,7 +86,7 @@ class Hotel {
 
     // Rerservation de l'hotel
 
-    public function reservationHotel(){
+   public function reservationHotel(){
         ?> <strong>Réservation de l'hôtel <?= $this?> </strong></br>
         <?php
         foreach ($this->_chambres as $chambre){
@@ -95,16 +95,14 @@ class Hotel {
                 if ($chambre->getReserver()){
                      $reserver++;
                 } 
+            }}
+            ?><?=$reserver?> RESERVATIONS </br>
             
-        }}
-        ?><?=$reserver?> RESERVATIONS </br>
-        <?php
-        foreach ($this->_chambres as $chambre){
-          $chambre->_reservations->$this->getClient()->getNom();
+            </br><?php
+          
+    
         } 
-        ?> 
-        </br><?php
-    }
+            
 
 
 }
