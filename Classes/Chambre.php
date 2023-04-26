@@ -7,7 +7,7 @@ class Chambre {
     private int $_nbLit;
     private int $_prix;
     private bool $_wifi;
-    private array $_reservations;
+    public array $_reservations;
     private Hotel $_hotel;
     private bool $_reserver; 
 
@@ -72,6 +72,14 @@ class Chambre {
 
     public function setHotel($hotel) {
         return $this->_hotel = $hotel;
+    }
+
+    public function getReservation(){
+        return $this->_reservations;
+    }
+
+    public function setReservation($reservation) {
+        return $this->_reservations = $reservation;
     }
 
     // toString

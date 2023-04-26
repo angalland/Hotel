@@ -31,6 +31,8 @@ $reservation4 = new Reservation ($client1, $chambre4, "15-09-2021", "16-09-2021"
 
 
 
-echo $client1->afficherReservation();
 echo $hotel1->infoHotel();
+echo $hotel1->reservationHotel();
+echo $client1->afficherReservation();
+
 

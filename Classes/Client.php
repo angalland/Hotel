@@ -68,5 +68,7 @@ class Client {
             $result .=" ) du ".$reservation."</br>"; 
         }
         return $result."</br>";
-    }
+   }
+
+
 }

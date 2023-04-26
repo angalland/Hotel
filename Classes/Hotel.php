@@ -80,17 +80,31 @@ class Hotel {
         };
         ?>
         Nombre de chambres réservées : <?=$reserver ?></br>
-        Nombre de chambres restantes : <?= count($this->_chambres) - $reserver ?>
-       <?php
+        Nombre de chambres restantes : <?= count($this->_chambres) - $reserver ?> </br></br>
+       <?php 
+    }
+
+    // Rerservation de l'hotel
+
+    public function reservationHotel(){
+        ?> <strong>Réservation de l'hôtel <?= $this?> </strong></br>
+        <?php
+        foreach ($this->_chambres as $chambre){
+            $reserver = 0;
+            foreach ($this->_chambres as $chambre){
+                if ($chambre->getReserver()){
+                     $reserver++;
+                } 
+            
+        }}
+        ?><?=$reserver?> RESERVATIONS </br>
+        <?php
+        foreach ($this->_chambres as $chambre){
+          $chambre->_reservations->$this->getClient()->getNom();
+        } 
+        ?> 
+        </br><?php
     }
 
 
 }
-
-
-
-
-
-
-
-
