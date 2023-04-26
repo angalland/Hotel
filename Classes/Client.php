@@ -73,7 +73,7 @@ class Client {
             $total += ($reservation->dureeSejour() * $reservation->getChambre()->getPrix());
         }
             
-        return $result." Prix total : ".$total."</br></br>";
+        return $result." Prix total : ".$total." €</br></br>";
     }
         
 }
