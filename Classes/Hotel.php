@@ -86,22 +86,36 @@ class Hotel {
 
     // Rerservation de l'hotel
 
-   public function reservationHotel(){
+    public function reservationHotel(){
         ?> <strong>Réservation de l'hôtel <?= $this?> </strong></br>
         <?php
-        foreach ($this->_chambres as $chambre){
+        foreach ($this->_chambres as $chambre){ // calcule le nombre de chambre reserver
             $reserver = 0;
             foreach ($this->_chambres as $chambre){
                 if ($chambre->getReserver()){
                      $reserver++;
                 } 
             }}
-            ?><?=$reserver?> RESERVATIONS </br>
-            
+            ?><?=$reserver?> RESERVATIONS </br><?php
+            foreach ($this->_chambres as $chambre){  // On parcours le tableau chambre
+                $reservations = $chambre->getReservation(); // on va chercher le tableau reservation
+                foreach ($reservations as $reservation){ // on parcours le tableau reservation
+                    ?>
+                    <?= $reservation->getClient()?> -  chambre  <!-- On obtient le nom du client -->
+                    <?= $reservation->getChambre()?> du -  <!-- on obtient le nom de la chambre-->
+                    <?= $reservation->getDateArrive()?> au  <!-- on obtient la date d'arrive -->
+                    <?= $reservation->getDateDepart()?></br>
+
+                    <?php
+                }
+               
+            }
+              
+            ?>
             </br><?php
           
     
-        } 
+    } 
             
 
 

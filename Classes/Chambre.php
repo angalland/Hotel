@@ -12,10 +12,9 @@ class Chambre {
     private bool $_reserver; 
 
     // Construct 
-    public function __construct(string $nomChambre, int $nbLit, /*bool $reserver,*/ int $prix, bool $wifi, Hotel $hotel){
+    public function __construct(string $nomChambre, int $nbLit, int $prix, bool $wifi, Hotel $hotel){
         $this->_nomChambre = $nomChambre;
         $this->_nbLit = $nbLit;
-        /*$this->_reserver = $reserver;*/
         $this->_prix = $prix;
         $this->_wifi = $wifi;
         $this->_reservations = [];
