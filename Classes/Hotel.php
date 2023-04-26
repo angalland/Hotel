@@ -125,7 +125,7 @@ class Hotel {
         
         <table style="border:1px solid black;">
                 <thead>
-                        <tr style="border:1px solid black;">
+                        <tr>
                             <th style="padding-right:40px;padding-left:20px;">Chambre</th>
                             <th style="padding-right:20px;padding-left:20px;">Prix</th>
                             <th style="padding-right:20px;padding-left:20px;">WIFI<th>
