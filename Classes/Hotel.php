@@ -119,10 +119,14 @@ class Hotel {
 
     // Status chambre hotel
     public function statusChambre(){
-        ?> <table>
+        ?>
+        <strong>Status des chambres de <?= $this ?></strong>
+        
+        
+        <table style="border:1px solid black;">
                 <thead>
-                        <tr>
-                            <th style="padding-right:20px;padding-left:20px;">Chambre</th>
+                        <tr style="border:1px solid black;">
+                            <th style="padding-right:40px;padding-left:20px;">Chambre</th>
                             <th style="padding-right:20px;padding-left:20px;">Prix</th>
                             <th style="padding-right:20px;padding-left:20px;">WIFI<th>
                             <th style="padding-right:20px;padding-left:20px;">ETAT<th>
@@ -132,6 +136,22 @@ class Hotel {
                     foreach ($this->_chambres as $chambre){
                     ?><tr>
                         <td style="text-align:center;"><?php echo $chambre->getNomChambre() ?></td>
+                        <td style="text-align:center;"><?php echo $chambre->getPrix() ?></td>
+                        <td style="text-align:center;"><?php  
+                        if ($chambre->getWIfi()){
+                            echo "oui";
+                        } else {
+                            echo "non";
+                        }
+                        ?></td>
+                        <td style="text-align:center;"><?php
+                        if (!$chambre->getReserver()){
+                            echo "disponible";
+                        } else {
+                            echo "Réservée";
+                        }
+                        ?></td>
+                        
                       </tr><?php
                         
     }}

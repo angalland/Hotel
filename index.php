@@ -29,12 +29,11 @@ $reservation2 = new Reservation ($client1, $chambre2, "05-02-2021", "07-02-2021"
 $reservation3 = new Reservation ($client1, $chambre3, "17-07-2021", "25-07-2021"); 
 $reservation4 = new Reservation ($client1, $chambre4, "15-09-2021", "16-09-2021");  
 
-echo $hotel1->infoHotel();
-echo $hotel1->reservationHotel();
-echo $hotel2->reservationHotel();
-echo $client1->afficherReservation()."</br>";
+$hotel1->infoHotel();
+$hotel1->reservationHotel();
+$hotel2->reservationHotel();
+echo $client1->afficherReservation();
 
-echo $reservation1->dureeSejour();
 
 $hotel1->statusChambre();
 
