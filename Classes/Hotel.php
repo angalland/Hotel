@@ -1,6 +1,3 @@
-
-
-
 <?php
 
 class Hotel {
@@ -24,53 +21,53 @@ class Hotel {
     }
 
     // Getter et Setter
-    public function getNom(){
+    public function getNom() : string {
         return $this->_nom;
     }
 
-    public function setNom($nom){
+    public function setNom($nom) : string {
         return $this->_nom = $nom;
     }
 
-    public function getAdresse(){
+    public function getAdresse() : string {
         return $this->_adresse;
     }
 
-    public function setAdresse($adresse){
+    public function setAdresse($adresse) : string {
         return $this->_adresse = $adresse;
     }
 
-    public function getCodePostale(){
+    public function getCodePostale() : string {
         return $this->_codePostal;
     }
 
-    public function setCodePostale($codePostal){
+    public function setCodePostale($codePostal) : string {
         return $this->_codePostal = $codePostal;
     }
 
-    public function getVille(){
+    public function getVille() : string {
         return $this->_ville;
     }
 
-    public function setVille($ville){
+    public function setVille($ville) : string {
         return $this->_ville = $ville;
     }
 
     // toString
 
-    public function __toString(){
+    public function __toString() : string {
         return $this->_nom;
     }
 
     // Ajouter Chambre 
-    public function addHotel(Chambre $chambres){
+    public function addHotel(Chambre $chambres){ // ajoute la classe chambre dans Hotel sous forme d'un tableau
         $this->_chambres[] = $chambres;
     }
     
     // Information Hotel
     public function infoHotel(){
-        ?>
-        <strong><?= $this ?></strong></br>
+        ?>                              <!-- ferme la balise php pour revenir sur du html -->
+        <strong><?= $this ?></strong></br> <!-- "<"?= ?>" indique que c'est une balise php et renvoie comme un echo le code à l'intèrieure-->
         <?= $this->getAdresse() ?> <?= $this->getCodePostale()?> <?=$this->getVille() ?></br> <!-- On obtient l'adresse, le code postale et la ville de l'hotel -->
         Nombre de chambres : <?=count($this->_chambres) ?>  </br> <!-- Compte le nombre entiers de chambres -->
         <?php
@@ -143,7 +140,7 @@ class Hotel {
                 <td><?= $chambre->getPrix() ?> €</td>
                 <td><?php  
         if ($chambre->getWIfi()){?>
-            <i class="fa-solid fa-wifi"></i><?php
+            <i class="fa-solid fa-wifi"></i><?php  // icone de wifi 
         } ?>
                 </td>
                 <td><?php
@@ -155,7 +152,6 @@ class Hotel {
                 <?php
         }?>
                 </td>
-                        
             </tr><?php
         }
     }

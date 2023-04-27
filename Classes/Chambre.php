@@ -90,7 +90,7 @@ class Chambre {
     // Ajouter reservation
     public function addReservation(Reservation $reservation) {
         if (!$this->getReserver()) {
-            $this->_reservations[] = $reservation;
+            $this->_reservations[] = $reservation;  // signifie que si la chambre est reserver modifie son status en réserver 
             return $this->setReserver(true);
         }
         else {

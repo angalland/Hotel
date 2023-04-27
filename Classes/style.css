@@ -1,11 +1,11 @@
 table {
     table-layout: fixed;
-    width: 50%;
-    border-collapse: collapse;
+    width: 50%;                 /* fixe la largeur du tableau ici 50% de la page */
+    border-collapse: collapse;  /* supprime les espaces entre les cellules */
 
 }
 thead th:nth-child(1) {
-    width: 25%;
+    width: 25%;                 /* fixe la largeur des th ici 25% */
 }
 
 thead th:nth-child(2) {
@@ -43,14 +43,14 @@ th, td {
     text-align:center;
 }
 
-tbody tr:nth-child(2n+1){
-    background-color: #E4E1E0;
+tbody tr:nth-child(2n+1){           /* selectionne tous les 2tr a partir du 1er */
+    background-color: #E4E1E0; 
 }
 
 td {
   border-top: 1px solid grey;  
   border-bottom: 1px solid grey;
   border-left: none;
-  margin-left: 0;
 }
+
 
