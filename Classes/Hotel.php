@@ -136,6 +136,7 @@ class Hotel {
         </tead>
         <tbody>
         <?php
+        sort($this->_chambres);
         foreach ($this->_chambres as $chambre){?>
             <tr class="ligne">
                 <td><?= $chambre->getNomChambre() ?></td>

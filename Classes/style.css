@@ -23,6 +23,7 @@ thead th:nth-child(2) {
 th, td {
     text-align: left;
     padding: 10px;
+    font-weight: normal;
 }
 
 .chambre {
@@ -51,6 +52,7 @@ tbody tr:nth-child(2n+1){
 }
 
 td {
+  border-top: 1px solid grey;  
   border-bottom: 1px solid grey;
   border-left: none;
   margin-left: 0;
