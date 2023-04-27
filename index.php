@@ -24,6 +24,7 @@ $chambre2 = new Chambre ("02", 2,  120, true, $hotel1);
 $chambre3 = new Chambre ("05", 2,  90, true, $hotel1);
 $chambre4 = new Chambre ("01", 4,  130, false, $hotel1);
 $chambre5 = new Chambre ("03", 3,  100, true, $hotel1);
+$chambre6 = new Chambre ("04", 2, 120, false, $hotel1);
 
     // Chambre Regent
 $chambre6 = new Chambre ("Suite Royale", 4, 250, true, $hotel2);
@@ -41,6 +42,8 @@ echo $client1->afficherReservation();
 
 
 $hotel1->statusChambre();
+
+
 
 
 

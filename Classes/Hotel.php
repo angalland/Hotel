@@ -124,7 +124,7 @@ class Hotel {
     public function statusChambre(){
     ?>
     <strong>Status des chambres de <?= $this ?></strong>
-    </br></br>
+    </br>
     <table> 
         <thead>
             <tr>
