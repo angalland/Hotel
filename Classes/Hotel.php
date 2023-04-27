@@ -1,3 +1,6 @@
+
+
+
 <?php
 
 class Hotel {
@@ -119,43 +122,45 @@ class Hotel {
 
     // Status chambre hotel
     public function statusChambre(){
-        ?>
-        <strong>Status des chambres de <?= $this ?></strong>
-        
-        
-        <table style="border:1px solid black;">
-                <thead>
-                        <tr>
-                            <th style="padding-right:40px;padding-left:20px;">Chambre</th>
-                            <th style="padding-right:20px;padding-left:20px;">Prix</th>
-                            <th style="padding-right:20px;padding-left:20px;">WIFI<th>
-                            <th >ETAT<th>
-                        </tr>
-                </tead>
-                <tbody><?php
-                    foreach ($this->_chambres as $chambre){
-                    ?><tr>
-                        <td style="text-align:center;"><?php echo $chambre->getNomChambre() ?></td>
-                        <td style="text-align:center;"><?php echo $chambre->getPrix() ?></td>
-                        <td style="text-align:center;"><?php  
-                        if ($chambre->getWIfi()){?>
-                           <i class="fa-solid fa-wifi"></i><?php
-                        } 
-                        ?></td>
-                        <td style="text-align:center;"><?php
-                        if (!$chambre->getReserver()){
-                            echo "disponible";
-                        } else {
-                            echo "Réservée";
-                        }
-                        ?></td>
+    ?>
+    <strong>Status des chambres de <?= $this ?></strong>
+    </br></br>
+    <table> 
+        <thead>
+            <tr>
+                <th class="chambre">Chambre</th>
+                <th>Prix</th>
+                <th>WIFI</th>
+                <th>ETAT</th>
+            </tr>
+        </tead>
+        <tbody>
+        <?php
+        foreach ($this->_chambres as $chambre){?>
+            <tr class="ligne">
+                <td><?= $chambre->getNomChambre() ?></td>
+                <td><?= $chambre->getPrix() ?> €</td>
+                <td><?php  
+        if ($chambre->getWIfi()){?>
+            <i class="fa-solid fa-wifi"></i><?php
+        } ?>
+                </td>
+                <td><?php
+        if (!$chambre->getReserver()){?>
+                <div class="disponible">disponible<div>
+                <?php
+        } else {?>
+                <div class="reserver">Réservée</div>
+                <?php
+        }?>
+                </td>
                         
-                      </tr><?php
-                        
-    }}
+            </tr><?php
+        }
+    }
+}
 
     
-}
         
         
       
